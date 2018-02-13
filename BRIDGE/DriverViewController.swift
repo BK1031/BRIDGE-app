@@ -1,0 +1,131 @@
+//
+//  DriverViewController.swift
+//  BRIDGE
+//
+//  Created by Bharat Kathi on 1/16/18.
+//  Copyright © 2018 Bharat Kathi. All rights reserved.
+//
+
+import UIKit
+import Firebase
+import FirebaseDatabase
+import MapKit
+import CoreLocation
+
+class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let locationManager = CLLocationManager()
+    var userLocation:CLLocationCoordinate2D?
+    
+    var ref:DatabaseReference?
+    var databaseHandle:DatabaseHandle?
+    
+    var riderID = ""
+    var riderName = ""
+    var riderLat = 0.0
+    var riderLong = 0.0
+    var riderCoordinates = ""
+    var riderAddress = ""
+    
+    var riderIDs = [String]()
+    var rideRequests = [String]()
+    var rideLat = [Double]()
+    var rideLong = [Double]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
+        ref = Database.database().reference()
+        
+        databaseHandle = ref?.child("rideRequests").observe(.value, with: { (snapshot) in
+            if snapshot.childrenCount > 0 {
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    self.rideRequests.removeAll()
+                    self.riderIDs.removeAll()
+                    self.rideLat.removeAll()
+                    self.rideLong.removeAll()
+                    for rider in dictionary {
+                        self.riderID = rider.key
+                        self.databaseHandle = self.ref?.child("rideRequests").child(self.riderID).observe(.value, with: { (data) in
+                            if let riderInfo = data.value as? [String: AnyObject] {
+                                self.riderName = riderInfo["riderName"] as! String
+                                self.riderLat = riderInfo["lat"] as! Double
+                                self.riderLong = riderInfo["long"] as! Double
+                                print(self.riderLat)
+                                print(self.rideLong)
+                                
+                                self.rideLat.append(self.riderLat)
+                                self.rideLong.append(self.riderLong)
+                                self.riderIDs.append(self.riderID)
+                                self.rideRequests.append(self.riderName)
+                                self.tableView.reloadData()
+                            }
+                        })
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+            
+            else {
+                self.rideLat.removeAll()
+                self.rideLong.removeAll()
+                self.riderIDs.removeAll()
+                self.rideRequests.removeAll()
+                self.tableView.reloadData()
+            }
+            
+        })
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let center = location.coordinate
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let region = MKCoordinateRegion(center: center, span: span)
+        mapView.setRegion(region, animated: false)
+        mapView.showsUserLocation = true
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rideRequests.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! RideRequestsTableViewCell
+        
+        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+        
+        cell.riderName.text = rideRequests[indexPath.row]
+        cell.riderLocation.text = "Valley Christian High School"
+        
+        cell.riderPic.layer.cornerRadius = cell.riderPic.frame.height / 2
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myRiderName = self.rideRequests[indexPath.row]
+        myRiderID = self.riderIDs[indexPath.row]
+        myRiderLat = self.rideLat[indexPath.row]
+        myRiderLong = self.rideLong[indexPath.row]
+        
+        performSegue(withIdentifier: "driverNav", sender: nil)
+    }
+
+}

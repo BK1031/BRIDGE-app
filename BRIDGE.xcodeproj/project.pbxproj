@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DE95C622533E25A704BE134 /* Pods_BRIDGE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC36DDCC325A3E474D13573 /* Pods_BRIDGE.framework */; };
+		4F043E8B203248E8009CA955 /* MapsNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F043E8A203248E8009CA955 /* MapsNavViewController.swift */; };
+		4F448EA2201661F2006CF50D /* DriverNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F448EA1201661F2006CF50D /* DriverNavViewController.swift */; };
+		4F45A9C0202D4C5E001A10A4 /* DriverConfirmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */; };
+		4F45A9C2202D4D0F001A10A4 /* DriverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45A9C1202D4D0F001A10A4 /* DriverInfoViewController.swift */; };
+		4F68D30C201165A400CC9612 /* RideRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F68D30B201165A400CC9612 /* RideRequestsTableViewCell.swift */; };
+		4F82CE5E2028D4DE00B69281 /* CheckUserLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82CE5D2028D4DE00B69281 /* CheckUserLoggedViewController.swift */; };
+		4F9A5251200E746C000F268F /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A5250200E746C000F268F /* RiderViewController.swift */; };
+		4F9A5253200E7473000F268F /* DriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A5252200E7473000F268F /* DriverViewController.swift */; };
+		4FAC684520053FBE001DD6A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC684420053FBE001DD6A2 /* AppDelegate.swift */; };
+		4FAC684720053FBE001DD6A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC684620053FBE001DD6A2 /* ViewController.swift */; };
+		4FAC684A20053FBE001DD6A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC684820053FBE001DD6A2 /* Main.storyboard */; };
+		4FAC684D20053FBE001DD6A2 /* BRIDGE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC684B20053FBE001DD6A2 /* BRIDGE.xcdatamodeld */; };
+		4FAC684F20053FBE001DD6A2 /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC684E20053FBE001DD6A2 /* Assests.xcassets */; };
+		4FAC685220053FBE001DD6A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC685020053FBE001DD6A2 /* LaunchScreen.storyboard */; };
+		4FAC685B20057054001DD6A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAC685A20057054001DD6A2 /* MapKit.framework */; };
+		4FAC685D20057097001DD6A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAC685C20057097001DD6A2 /* CoreLocation.framework */; };
+		4FAC685F2006BF96001DD6A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC685E2006BF95001DD6A2 /* GoogleService-Info.plist */; };
+		4FE790B62006C955007FFE41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790B52006C955007FFE41 /* LoginViewController.swift */; };
+		4FE790B82007D2BD007FFE41 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790B72007D2BD007FFE41 /* RegisterViewController.swift */; };
+		4FE790BA2008136C007FFE41 /* RideHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790B92008136C007FFE41 /* RideHistoryViewController.swift */; };
+		4FE790BC20081381007FFE41 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790BB20081381007FFE41 /* SettingsViewController.swift */; };
+		4FE790BE20081396007FFE41 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790BD20081396007FFE41 /* AccountViewController.swift */; };
+		4FE790C020084A12007FFE41 /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790BF20084A12007FFE41 /* Initialization.swift */; };
+		4FE790C8200B01C2007FFE41 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790C7200B01C1007FFE41 /* EditAccountViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A8E97233142AB4F086B4C6A /* Pods-BRIDGE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BRIDGE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BRIDGE/Pods-BRIDGE.release.xcconfig"; sourceTree = "<group>"; };
+		4F043E8A203248E8009CA955 /* MapsNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsNavViewController.swift; sourceTree = "<group>"; };
+		4F448EA1201661F2006CF50D /* DriverNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverNavViewController.swift; sourceTree = "<group>"; };
+		4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverConfirmedViewController.swift; sourceTree = "<group>"; };
+		4F45A9C1202D4D0F001A10A4 /* DriverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoViewController.swift; sourceTree = "<group>"; };
+		4F68D30B201165A400CC9612 /* RideRequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestsTableViewCell.swift; sourceTree = "<group>"; };
+		4F82CE5D2028D4DE00B69281 /* CheckUserLoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserLoggedViewController.swift; sourceTree = "<group>"; };
+		4F9A5250200E746C000F268F /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
+		4F9A5252200E7473000F268F /* DriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverViewController.swift; sourceTree = "<group>"; };
+		4FAC684120053FBE001DD6A2 /* BRIDGE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BRIDGE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FAC684420053FBE001DD6A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4FAC684620053FBE001DD6A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4FAC684920053FBE001DD6A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4FAC684C20053FBE001DD6A2 /* BRIDGE.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BRIDGE.xcdatamodel; sourceTree = "<group>"; };
+		4FAC684E20053FBE001DD6A2 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assests.xcassets; sourceTree = "<group>"; };
+		4FAC685120053FBE001DD6A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4FAC685320053FBE001DD6A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FAC685A20057054001DD6A2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4FAC685C20057097001DD6A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4FAC685E2006BF95001DD6A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4FE790B52006C955007FFE41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4FE790B72007D2BD007FFE41 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4FE790B92008136C007FFE41 /* RideHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryViewController.swift; sourceTree = "<group>"; };
+		4FE790BB20081381007FFE41 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4FE790BD20081396007FFE41 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		4FE790BF20084A12007FFE41 /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
+		4FE790C7200B01C1007FFE41 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		9DC36DDCC325A3E474D13573 /* Pods_BRIDGE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BRIDGE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F441922D2BA653CC6DC1EC4F /* Pods-BRIDGE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BRIDGE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BRIDGE/Pods-BRIDGE.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FAC683E20053FBE001DD6A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAC685D20057097001DD6A2 /* CoreLocation.framework in Frameworks */,
+				4FAC685B20057054001DD6A2 /* MapKit.framework in Frameworks */,
+				0DE95C622533E25A704BE134 /* Pods_BRIDGE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FAC683820053FBE001DD6A2 = {
+			isa = PBXGroup;
+			children = (
+				4FAC684320053FBE001DD6A2 /* BRIDGE */,
+				4FAC684220053FBE001DD6A2 /* Products */,
+				4FAC685920057054001DD6A2 /* Frameworks */,
+				FF7488FF32CE3F482F2CF6A9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		4FAC684220053FBE001DD6A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC684120053FBE001DD6A2 /* BRIDGE.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FAC684320053FBE001DD6A2 /* BRIDGE */ = {
+			isa = PBXGroup;
+			children = (
+				4FE790BF20084A12007FFE41 /* Initialization.swift */,
+				4F68D30B201165A400CC9612 /* RideRequestsTableViewCell.swift */,
+				4FAC684420053FBE001DD6A2 /* AppDelegate.swift */,
+				4F82CE5D2028D4DE00B69281 /* CheckUserLoggedViewController.swift */,
+				4FAC684620053FBE001DD6A2 /* ViewController.swift */,
+				4FE790B52006C955007FFE41 /* LoginViewController.swift */,
+				4FE790B72007D2BD007FFE41 /* RegisterViewController.swift */,
+				4FE790B92008136C007FFE41 /* RideHistoryViewController.swift */,
+				4FE790BB20081381007FFE41 /* SettingsViewController.swift */,
+				4FE790BD20081396007FFE41 /* AccountViewController.swift */,
+				4FE790C7200B01C1007FFE41 /* EditAccountViewController.swift */,
+				4F9A5250200E746C000F268F /* RiderViewController.swift */,
+				4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */,
+				4F45A9C1202D4D0F001A10A4 /* DriverInfoViewController.swift */,
+				4F9A5252200E7473000F268F /* DriverViewController.swift */,
+				4F448EA1201661F2006CF50D /* DriverNavViewController.swift */,
+				4F043E8A203248E8009CA955 /* MapsNavViewController.swift */,
+				4FAC684820053FBE001DD6A2 /* Main.storyboard */,
+				4FAC684E20053FBE001DD6A2 /* Assests.xcassets */,
+				4FAC685020053FBE001DD6A2 /* LaunchScreen.storyboard */,
+				4FAC685320053FBE001DD6A2 /* Info.plist */,
+				4FAC685E2006BF95001DD6A2 /* GoogleService-Info.plist */,
+				4FAC684B20053FBE001DD6A2 /* BRIDGE.xcdatamodeld */,
+			);
+			path = BRIDGE;
+			sourceTree = "<group>";
+		};
+		4FAC685920057054001DD6A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC685C20057097001DD6A2 /* CoreLocation.framework */,
+				4FAC685A20057054001DD6A2 /* MapKit.framework */,
+				9DC36DDCC325A3E474D13573 /* Pods_BRIDGE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF7488FF32CE3F482F2CF6A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F441922D2BA653CC6DC1EC4F /* Pods-BRIDGE.debug.xcconfig */,
+				3A8E97233142AB4F086B4C6A /* Pods-BRIDGE.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FAC684020053FBE001DD6A2 /* BRIDGE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FAC685620053FBE001DD6A2 /* Build configuration list for PBXNativeTarget "BRIDGE" */;
+			buildPhases = (
+				CFF997021371ED6939DBD823 /* [CP] Check Pods Manifest.lock */,
+				4FAC683D20053FBE001DD6A2 /* Sources */,
+				4FAC683E20053FBE001DD6A2 /* Frameworks */,
+				4FAC683F20053FBE001DD6A2 /* Resources */,
+				2316CDA7236F3F1E1AF2BB79 /* [CP] Embed Pods Frameworks */,
+				5F5CCA9B063569E0E1F0CD7A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BRIDGE;
+			productName = BRIDGE;
+			productReference = 4FAC684120053FBE001DD6A2 /* BRIDGE.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FAC683920053FBE001DD6A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Bharat Kathi";
+				TargetAttributes = {
+					4FAC684020053FBE001DD6A2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 4FAC683C20053FBE001DD6A2 /* Build configuration list for PBXProject "BRIDGE" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4FAC683820053FBE001DD6A2;
+			productRefGroup = 4FAC684220053FBE001DD6A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FAC684020053FBE001DD6A2 /* BRIDGE */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FAC683F20053FBE001DD6A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAC685220053FBE001DD6A2 /* LaunchScreen.storyboard in Resources */,
+				4FAC685F2006BF96001DD6A2 /* GoogleService-Info.plist in Resources */,
+				4FAC684F20053FBE001DD6A2 /* Assests.xcassets in Resources */,
+				4FAC684A20053FBE001DD6A2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2316CDA7236F3F1E1AF2BB79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BRIDGE/Pods-BRIDGE-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BRIDGE/Pods-BRIDGE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F5CCA9B063569E0E1F0CD7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BRIDGE/Pods-BRIDGE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFF997021371ED6939DBD823 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BRIDGE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FAC683D20053FBE001DD6A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F45A9C0202D4C5E001A10A4 /* DriverConfirmedViewController.swift in Sources */,
+				4F043E8B203248E8009CA955 /* MapsNavViewController.swift in Sources */,
+				4F9A5253200E7473000F268F /* DriverViewController.swift in Sources */,
+				4F9A5251200E746C000F268F /* RiderViewController.swift in Sources */,
+				4FE790B62006C955007FFE41 /* LoginViewController.swift in Sources */,
+				4F82CE5E2028D4DE00B69281 /* CheckUserLoggedViewController.swift in Sources */,
+				4FE790B82007D2BD007FFE41 /* RegisterViewController.swift in Sources */,
+				4FE790C8200B01C2007FFE41 /* EditAccountViewController.swift in Sources */,
+				4FE790BE20081396007FFE41 /* AccountViewController.swift in Sources */,
+				4FE790BC20081381007FFE41 /* SettingsViewController.swift in Sources */,
+				4FAC684D20053FBE001DD6A2 /* BRIDGE.xcdatamodeld in Sources */,
+				4F448EA2201661F2006CF50D /* DriverNavViewController.swift in Sources */,
+				4F68D30C201165A400CC9612 /* RideRequestsTableViewCell.swift in Sources */,
+				4FE790BA2008136C007FFE41 /* RideHistoryViewController.swift in Sources */,
+				4FE790C020084A12007FFE41 /* Initialization.swift in Sources */,
+				4F45A9C2202D4D0F001A10A4 /* DriverInfoViewController.swift in Sources */,
+				4FAC684720053FBE001DD6A2 /* ViewController.swift in Sources */,
+				4FAC684520053FBE001DD6A2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4FAC684820053FBE001DD6A2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FAC684920053FBE001DD6A2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4FAC685020053FBE001DD6A2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FAC685120053FBE001DD6A2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FAC685420053FBE001DD6A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4FAC685520053FBE001DD6A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FAC685720053FBE001DD6A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F441922D2BA653CC6DC1EC4F /* Pods-BRIDGE.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EN646ZUBQA;
+				INFOPLIST_FILE = BRIDGE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bk1031.BRIDGE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4FAC685820053FBE001DD6A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A8E97233142AB4F086B4C6A /* Pods-BRIDGE.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EN646ZUBQA;
+				INFOPLIST_FILE = BRIDGE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bk1031.BRIDGE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FAC683C20053FBE001DD6A2 /* Build configuration list for PBXProject "BRIDGE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAC685420053FBE001DD6A2 /* Debug */,
+				4FAC685520053FBE001DD6A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FAC685620053FBE001DD6A2 /* Build configuration list for PBXNativeTarget "BRIDGE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAC685720053FBE001DD6A2 /* Debug */,
+				4FAC685820053FBE001DD6A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4FAC684B20053FBE001DD6A2 /* BRIDGE.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4FAC684C20053FBE001DD6A2 /* BRIDGE.xcdatamodel */,
+			);
+			currentVersion = 4FAC684C20053FBE001DD6A2 /* BRIDGE.xcdatamodel */;
+			path = BRIDGE.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4FAC683920053FBE001DD6A2 /* Project object */;
+}

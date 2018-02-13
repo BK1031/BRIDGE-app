@@ -1,0 +1,6 @@
+framework module Pods_BRIDGE {
+  umbrella header "Pods-BRIDGE-umbrella.h"
+
+  export *
+  module * { export * }
+}
