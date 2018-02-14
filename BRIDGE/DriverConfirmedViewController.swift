@@ -39,12 +39,13 @@ class DriverConfirmedViewController: UIViewController, MKMapViewDelegate, CLLoca
                 self.driverCoordinates = CLLocationCoordinate2DMake(self.driverLat, self.driverLong)
             }
         })
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = driverCoordinates
-        annotation.title = "Driver"
-        annotation.subtitle = "This is the location of your BRIDGE."
-        mapView.addAnnotation(annotation)
+        while true {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = driverCoordinates
+            annotation.title = "Driver"
+            annotation.subtitle = "This is the location of your BRIDGE."
+            mapView.addAnnotation(annotation)
+        }
         
     }
 

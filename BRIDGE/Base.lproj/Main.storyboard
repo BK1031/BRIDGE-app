@@ -919,7 +919,7 @@
                     <connections>
                         <outlet property="mapView" destination="ZWo-xz-F8A" id="QU3-yZ-jld"/>
                         <outlet property="myBRIDGEButton" destination="Qdj-yE-vg3" id="Dc5-d9-YQ5"/>
-                        <segue destination="Rsj-2D-V5D" kind="presentation" identifier="driverInfo" modalTransitionStyle="coverVertical" id="ugN-ji-fpN"/>
+                        <segue destination="Rsj-2D-V5D" kind="presentation" identifier="driverInfo" modalTransitionStyle="coverVertical" id="Jq9-cJ-naB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxy-QM-743" userLabel="First Responder" sceneMemberID="firstResponder"/>

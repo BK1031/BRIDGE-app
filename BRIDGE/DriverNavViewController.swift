@@ -22,6 +22,8 @@ class DriverNavViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     @IBOutlet weak var directionsView: UIView!
     
+    var confirm = false
+    
     let locationManager = CLLocationManager()
     var driverLocation:CLLocationCoordinate2D?
     
@@ -97,6 +99,11 @@ class DriverNavViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locationManager.location?.coordinate {
             driverLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            if confirm {
+                let value = ["riderName": myRiderName, "riderLat": myRiderLat, "riderLong": myRiderLong, "driverLat": driverLocation?.latitude, "driverLong": driverLocation?.longitude] as [String : Any]
+                let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
+                rideReference?.updateChildValues(value)
+            }
         }
         
     }
@@ -106,6 +113,7 @@ class DriverNavViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     }
     
     @IBAction func confirmButton(_ sender: UIButton) {
+        confirm = true
         let value = ["riderName": myRiderName, "riderLat": myRiderLat, "riderLong": myRiderLong, "driverLat": driverLocation?.latitude, "driverLong": driverLocation?.longitude] as [String : Any]
         let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
         rideReference?.updateChildValues(value)
