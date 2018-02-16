@@ -59,8 +59,8 @@ class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                     let request = rider.value as? [String: AnyObject]
                     self.riderName = request!["riderName"] as! String
                     self.riderID = request!["riderID"] as! String
-                    self.riderLat = request!["riderLat"] as! Double
-                    self.riderLong = request!["riderLong"] as! Double
+                    self.riderLat = request!["lat"] as! Double
+                    self.riderLong = request!["long"] as! Double
                     
                     self.rideRequests.append(self.riderName)
                     self.riderIDs.append(self.riderID)
