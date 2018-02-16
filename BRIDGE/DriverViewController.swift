@@ -50,31 +50,24 @@ class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         databaseHandle = ref?.child("rideRequests").observe(.value, with: { (snapshot) in
             if snapshot.childrenCount > 0 {
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    self.rideRequests.removeAll()
-                    self.riderIDs.removeAll()
-                    self.rideLat.removeAll()
-                    self.rideLong.removeAll()
-                    for rider in dictionary {
-                        self.riderID = rider.key
-                        self.databaseHandle = self.ref?.child("rideRequests").child(self.riderID).observe(.value, with: { (data) in
-                            if let riderInfo = data.value as? [String: AnyObject] {
-                                self.riderName = riderInfo["riderName"] as! String
-                                self.riderLat = riderInfo["lat"] as! Double
-                                self.riderLong = riderInfo["long"] as! Double
-                                print(self.riderLat)
-                                print(self.rideLong)
-                                
-                                self.rideLat.append(self.riderLat)
-                                self.rideLong.append(self.riderLong)
-                                self.riderIDs.append(self.riderID)
-                                self.rideRequests.append(self.riderName)
-                                self.tableView.reloadData()
-                            }
-                        })
-                    }
-                    self.tableView.reloadData()
+                self.rideRequests.removeAll()
+                self.riderIDs.removeAll()
+                self.rideLat.removeAll()
+                self.rideLong.removeAll()
+                
+                for rider in snapshot.children.allObjects as! [DataSnapshot] {
+                    let request = rider.value as? [String: AnyObject]
+                    self.riderName = request!["riderName"] as! String
+                    self.riderID = request!["riderID"] as! String
+                    self.riderLat = request!["riderLat"] as! Double
+                    self.riderLong = request!["riderLong"] as! Double
+                    
+                    self.rideRequests.append(self.riderName)
+                    self.riderIDs.append(self.riderID)
+                    self.rideLat.append(self.riderLat)
+                    self.rideLong.append(self.riderLong)
                 }
+                self.tableView.reloadData()
             }
             
             else {
