@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInButton(_ sender: UIButton) {
+        self.logInStatusLabel.text = ""
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             //Check if User exists
             if user != nil {
