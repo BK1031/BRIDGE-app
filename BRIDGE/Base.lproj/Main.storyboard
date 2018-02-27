@@ -262,27 +262,14 @@
                     <view key="view" contentMode="scaleToFill" id="Um7-ed-aY4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wD-TL-HTB">
-                                <rect key="frame" x="0.0" y="45" width="375" height="42"/>
-                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="30"/>
-                                <color key="textColor" red="0.77264106269999999" green="0.61037808660000004" blue="0.36282834409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="9wD-TL-HTB" firstAttribute="leading" secondItem="HMA-KY-ayB" secondAttribute="leading" id="WFp-MD-hgD"/>
-                            <constraint firstItem="9wD-TL-HTB" firstAttribute="top" secondItem="HMA-KY-ayB" secondAttribute="top" constant="25" id="hsM-gO-4Uy"/>
-                            <constraint firstItem="9wD-TL-HTB" firstAttribute="trailing" secondItem="HMA-KY-ayB" secondAttribute="trailing" id="skU-qX-HVj"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HMA-KY-ayB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="Z68-bJ-KnO"/>
+                    <navigationItem key="navigationItem" title="Ride History" id="RBk-gZ-bCg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRQ-vg-ExM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="372" y="747"/>
+            <point key="canvasLocation" x="310" y="795"/>
         </scene>
         <!--Settings Controller-->
         <scene sceneID="4ja-tQ-MCR">
@@ -291,27 +278,30 @@
                     <view key="view" contentMode="scaleToFill" id="Yug-dl-U2R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORV-TC-w1i">
-                                <rect key="frame" x="0.0" y="45" width="375" height="42"/>
-                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="30"/>
-                                <color key="textColor" red="0.77264106269999999" green="0.61037808660000004" blue="0.36282834409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ORV-TC-w1i" firstAttribute="leading" secondItem="qCm-3t-RQV" secondAttribute="leading" id="3SY-ko-j4x"/>
-                            <constraint firstItem="ORV-TC-w1i" firstAttribute="top" secondItem="qCm-3t-RQV" secondAttribute="top" constant="25" id="R4A-tr-oCN"/>
-                            <constraint firstItem="ORV-TC-w1i" firstAttribute="trailing" secondItem="qCm-3t-RQV" secondAttribute="trailing" id="pVG-KY-UTb"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qCm-3t-RQV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="BuC-6n-U4y"/>
+                    <navigationItem key="navigationItem" title="Settings" id="4e1-6C-Yxh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yGH-8B-IIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="746"/>
+            <point key="canvasLocation" x="1879" y="795"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="Plq-uy-w6Q">
+            <objects>
+                <viewController id="SOK-Ph-NXV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iyM-ty-Hq0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Elr-fh-Dhb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help" id="YZA-qy-Ipb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QXf-Ea-D6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3712.8000000000002" y="772.26386806596713"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Orb-Vo-n9w">
@@ -325,8 +315,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Mev-p9-dMm"/>
-                        <segue destination="mdS-8c-g3y" kind="relationship" relationship="viewControllers" id="p95-E7-7T4"/>
-                        <segue destination="1DE-qz-hLu" kind="relationship" relationship="viewControllers" id="3Ls-tg-Hyp"/>
+                        <segue destination="GjQ-xW-PhB" kind="relationship" relationship="viewControllers" id="p95-E7-7T4"/>
+                        <segue destination="adt-Rf-haq" kind="relationship" relationship="viewControllers" id="3Ls-tg-Hyp"/>
+                        <segue destination="tY5-zo-S02" kind="relationship" relationship="viewControllers" id="cTY-cE-COH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHT-An-je4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -475,7 +466,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRIDGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX9-79-Gaf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX9-79-Gaf">
                                 <rect key="frame" x="0.0" y="45" width="340" height="42"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="30"/>
                                 <color key="textColor" red="0.77264106269999999" green="0.61037808660000004" blue="0.36282834409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1339,17 +1330,87 @@
             </objects>
             <point key="canvasLocation" x="2249" y="-673"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MDR-mS-a3h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GjQ-xW-PhB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="Z68-bJ-KnO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Ge7-G2-RSr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="30"/>
+                            <color key="textColor" red="0.77264106273651123" green="0.61037808656692505" blue="0.36282834410667419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mdS-8c-g3y" kind="relationship" relationship="rootViewController" id="WoC-CQ-eRf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vzw-VH-gjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="1486"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="7sv-8v-9Ll">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="adt-Rf-haq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="BuC-6n-U4y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="9Lq-hx-Y5J">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="30"/>
+                            <color key="textColor" red="0.77264106269999999" green="0.61037808660000004" blue="0.36282834409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1DE-qz-hLu" kind="relationship" relationship="rootViewController" id="TQS-co-g0T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NsQ-Zf-bI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="795"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="628-Se-SR5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tY5-zo-S02" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Help" image="help" id="BA5-uA-g51"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Sdb-YI-d5s">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="30"/>
+                            <color key="textColor" red="0.77264106269999999" green="0.61037808660000004" blue="0.36282834409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SOK-Ph-NXV" kind="relationship" relationship="rootViewController" id="YyP-I6-uQ9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHa-Zm-hVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2948" y="772"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BRIDGE" width="1315" height="928"/>
+        <image name="help" width="30" height="30"/>
         <image name="home" width="30" height="30"/>
         <image name="profile" width="400" height="400"/>
         <image name="settings" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Riv-b9-e9n"/>
-        <segue reference="WUX-7O-7wz"/>
-        <segue reference="GCf-hw-D6H"/>
+        <segue reference="2p6-bD-nfg"/>
+        <segue reference="FJF-n9-Xb5"/>
+        <segue reference="AaM-gv-6PE"/>
         <segue reference="gWl-Ha-l92"/>
     </inferredMetricsTieBreakers>
 </document>
