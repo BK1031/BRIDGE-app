@@ -33,15 +33,12 @@ class EditAccountViewController: UIViewController, UIImagePickerControllerDelega
         ref = Database.database().reference()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         profileButton.layer.cornerRadius = 10
+        self.navigationItem.title = "Edit Account"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func cancelButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "backHome", sender: self)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -95,7 +92,7 @@ class EditAccountViewController: UIViewController, UIImagePickerControllerDelega
         let data = ["studentName": kidName, "address": addressFull]
         self.ref?.child("users").child(userID).updateChildValues(data)
         
-        self.performSegue(withIdentifier: "backHome", sender: self)
+        dismiss(animated: true, completion: nil)
     }
     
 }

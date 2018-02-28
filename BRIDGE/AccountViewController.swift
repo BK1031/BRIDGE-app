@@ -41,12 +41,17 @@ class AccountViewController: UIViewController {
         profileImageView.layer.cornerRadius = (profileImageView.frame.height) / 2
     }
     
-    @IBAction func doneButton(_ sender: UIButton) {
+
+    @IBAction func doneButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addFundsButton(_ sender: UIButton) {
         //TODO: Add apple pay shit here
+    }
+    
+    @IBAction func updateAccountButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "editAccount" , sender: self)
     }
     
     @IBAction func signOutButton(_ sender: UIButton) {
