@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0DE95C622533E25A704BE134 /* Pods_BRIDGE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC36DDCC325A3E474D13573 /* Pods_BRIDGE.framework */; };
 		4F043E8B203248E8009CA955 /* MapsNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F043E8A203248E8009CA955 /* MapsNavViewController.swift */; };
+		4F07899B20472106000CF606 /* RideHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07899A20472106000CF606 /* RideHistoryTableViewCell.swift */; };
 		4F448EA2201661F2006CF50D /* DriverNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F448EA1201661F2006CF50D /* DriverNavViewController.swift */; };
 		4F45A9C0202D4C5E001A10A4 /* DriverConfirmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */; };
 		4F45A9C2202D4D0F001A10A4 /* DriverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45A9C1202D4D0F001A10A4 /* DriverInfoViewController.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		3A8E97233142AB4F086B4C6A /* Pods-BRIDGE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BRIDGE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BRIDGE/Pods-BRIDGE.release.xcconfig"; sourceTree = "<group>"; };
 		4F043E8A203248E8009CA955 /* MapsNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsNavViewController.swift; sourceTree = "<group>"; };
+		4F07899A20472106000CF606 /* RideHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		4F448EA1201661F2006CF50D /* DriverNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverNavViewController.swift; sourceTree = "<group>"; };
 		4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverConfirmedViewController.swift; sourceTree = "<group>"; };
 		4F45A9C1202D4D0F001A10A4 /* DriverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfoViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				4FAC684620053FBE001DD6A2 /* ViewController.swift */,
 				4FE790B52006C955007FFE41 /* LoginViewController.swift */,
 				4FE790B72007D2BD007FFE41 /* RegisterViewController.swift */,
+				4F07899A20472106000CF606 /* RideHistoryTableViewCell.swift */,
 				4FE790B92008136C007FFE41 /* RideHistoryViewController.swift */,
 				4FE790BB20081381007FFE41 /* SettingsViewController.swift */,
 				4FE790BD20081396007FFE41 /* AccountViewController.swift */,
@@ -295,6 +298,7 @@
 				4F043E8B203248E8009CA955 /* MapsNavViewController.swift in Sources */,
 				4F9A5253200E7473000F268F /* DriverViewController.swift in Sources */,
 				4F9A5251200E746C000F268F /* RiderViewController.swift in Sources */,
+				4F07899B20472106000CF606 /* RideHistoryTableViewCell.swift in Sources */,
 				4FE790B62006C955007FFE41 /* LoginViewController.swift in Sources */,
 				4F82CE5E2028D4DE00B69281 /* CheckUserLoggedViewController.swift in Sources */,
 				4FE790B82007D2BD007FFE41 /* RegisterViewController.swift in Sources */,
