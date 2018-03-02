@@ -32,6 +32,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         requestRideButton.layer.cornerRadius = 10
         driverButton.layer.cornerRadius = 10
+        
+        if riderDropped {
+            myRiderName = ""
+            myRiderID = ""
+            myRiderLat = 0.0
+            myRiderLong = 0.0
+            let alert = UIAlertController(title: "Ride Finished", message: "Your Rider has been dropped off. Thank you for driving with BRIGDE!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Got it", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            riderDropped = false
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

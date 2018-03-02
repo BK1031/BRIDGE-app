@@ -63,6 +63,12 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let center = location.coordinate
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let region = MKCoordinateRegion(center: center, span: span)
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
         if let location = locationManager.location?.coordinate {
             userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             ref = Database.database().reference()
@@ -71,11 +77,6 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             usersReference?.updateChildValues(values)
         }
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func cancelRideButton(_ sender: UIButton) {

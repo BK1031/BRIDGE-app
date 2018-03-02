@@ -114,7 +114,7 @@ class DriverNavViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     
     @IBAction func confirmButton(_ sender: UIButton) {
         confirm = true
-        let value = ["riderName": myRiderName, "riderLat": myRiderLat, "riderLong": myRiderLong, "driverLat": driverLocation?.latitude, "driverLong": driverLocation?.longitude] as [String : Any]
+        let value = ["riderName": myRiderName, "riderLat": myRiderLat, "riderLong": myRiderLong, "driverLat": driverLocation?.latitude, "driverLong": driverLocation?.longitude, "driverArrived": "false"] as [String : Any]
         let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
         rideReference?.updateChildValues(value)
         

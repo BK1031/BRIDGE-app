@@ -18,6 +18,11 @@ class DriverConfirmedViewController: UIViewController, MKMapViewDelegate, CLLoca
     
     @IBOutlet weak var myBRIDGEButton: UIButton!
     
+    var confirm = false
+    
+    let locationManager = CLLocationManager()
+    var riderLocation:CLLocationCoordinate2D?
+    
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
@@ -32,24 +37,75 @@ class DriverConfirmedViewController: UIViewController, MKMapViewDelegate, CLLoca
         
         ref = Database.database().reference()
         
-        ref?.child("acceptedRides").child(userID).observe(.value, with: { (snapshot) in
+        mapView.delegate = self
+        mapView.showsScale = true
+        mapView.showsPointsOfInterest = true
+        mapView.showsUserLocation = true
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+        
+        let riderCoordinates = locationManager.location?.coordinate
+        
+        databaseHandle = ref?.child("acceptedRides").child(userID).observe(.value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 self.driverLat = dictionary["driverLat"] as! Double
                 self.driverLong = dictionary["driverLong"] as! Double
                 self.driverCoordinates = CLLocationCoordinate2DMake(self.driverLat, self.driverLong)
-                print(self.driverCoordinates)
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = self.driverCoordinates
+                annotation.title = "Driver"
+                annotation.subtitle = "This is the location of your BRIDGE."
+                self.mapView.addAnnotation(annotation)
+            }
+        })
+        
+        databaseHandle = ref?.child("acceptedRides").child(userID).child("driverArrived").observe(.value, with: { (snapshot) in
+            if let driverStatus = snapshot.value as? String {
+                if driverStatus == "true" {
+                    let alert = UIAlertController(title: "Driver Arrived", message: "Your BRIDGE has arrived! Keep an eye out for your driver.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Got it", style: .default, handler: { (action) in
+                        self.confirm = true
+                    })
+                    
+                    alert.addAction(action)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        })
+        
+        databaseHandle = ref?.child("acceptedRides").child(userID).child("riderPickedUp").observe(.value, with: { (snapshot) in
+            if let riderPickedStatus = snapshot.value as? String {
+                if riderPickedStatus == "true" {
+                    self.confirm = false
+                    self.locationManager.stopUpdatingLocation()
+                    
+                    let value = ["riderLat": nil, "riderLong": nil, "riderPickedUp": nil, "driverArrived": nil, "driverLat": nil, "driverLong": nil, "riderName": nil] as [String : Any?]
+                    let rideReference = self.ref?.child("acceptedRides").child(userID)
+                    rideReference?.updateChildValues(value)
+                    
+                    self.performSegue(withIdentifier: "riderPicked", sender: self)
+                }
             }
         })
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    @IBAction func driverInfoButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "driverInfo", sender: self)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locationManager.location?.coordinate {
+            riderLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            if confirm {
+                let value = ["riderLat": riderLocation?.latitude, "riderLong": riderLocation?.longitude, "riderPickedUp": "false"] as [String : Any]
+                let rideReference = self.ref?.child("acceptedRides").child(userID)
+                rideReference?.updateChildValues(value)
+            }
+        }
+        
     }
     
 }
