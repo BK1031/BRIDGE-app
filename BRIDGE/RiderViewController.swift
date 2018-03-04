@@ -50,7 +50,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                     usersReference?.updateChildValues(values)
                     
                     let alert = UIAlertController(title: "Driver Confirmed", message: "A driver has accepted your BRIDGE request!", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Got it", style: .default, handler: { (action) in
+                    let action = UIAlertAction(title: "Pay $5", style: .default, handler: { (action) in
                         self.performSegue(withIdentifier: "driverConfirmed", sender: self)
                     })
                     
@@ -67,7 +67,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let center = location.coordinate
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: center, span: span)
-        mapView.setRegion(region, animated: true)
+        mapView.setRegion(region, animated: false)
         mapView.showsUserLocation = true
         if let location = locationManager.location?.coordinate {
             userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)

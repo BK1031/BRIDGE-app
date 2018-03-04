@@ -17,6 +17,7 @@
 		4F5519842048AF8600D5F32A /* DestMapsNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5519832048AF8600D5F32A /* DestMapsNavViewController.swift */; };
 		4F5519862048FC7E00D5F32A /* FinishRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5519852048FC7E00D5F32A /* FinishRideViewController.swift */; };
 		4F68D30C201165A400CC9612 /* RideRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F68D30B201165A400CC9612 /* RideRequestsTableViewCell.swift */; };
+		4F6A779A204BF336003E1DAB /* RiderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A7799204BF336003E1DAB /* RiderInfoViewController.swift */; };
 		4F82CE5E2028D4DE00B69281 /* CheckUserLoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82CE5D2028D4DE00B69281 /* CheckUserLoggedViewController.swift */; };
 		4F9A5251200E746C000F268F /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A5250200E746C000F268F /* RiderViewController.swift */; };
 		4F9A5253200E7473000F268F /* DriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A5252200E7473000F268F /* DriverViewController.swift */; };
@@ -49,9 +50,11 @@
 		4F5519832048AF8600D5F32A /* DestMapsNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestMapsNavViewController.swift; sourceTree = "<group>"; };
 		4F5519852048FC7E00D5F32A /* FinishRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRideViewController.swift; sourceTree = "<group>"; };
 		4F68D30B201165A400CC9612 /* RideRequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestsTableViewCell.swift; sourceTree = "<group>"; };
+		4F6A7799204BF336003E1DAB /* RiderInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderInfoViewController.swift; sourceTree = "<group>"; };
 		4F82CE5D2028D4DE00B69281 /* CheckUserLoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserLoggedViewController.swift; sourceTree = "<group>"; };
 		4F9A5250200E746C000F268F /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 		4F9A5252200E7473000F268F /* DriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverViewController.swift; sourceTree = "<group>"; };
+		4F9E135F2049D056003430FD /* BRIDGE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BRIDGE.entitlements; sourceTree = "<group>"; };
 		4FAC684120053FBE001DD6A2 /* BRIDGE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BRIDGE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAC684420053FBE001DD6A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FAC684620053FBE001DD6A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		4FAC684320053FBE001DD6A2 /* BRIDGE */ = {
 			isa = PBXGroup;
 			children = (
+				4F9E135F2049D056003430FD /* BRIDGE.entitlements */,
 				4FE790BF20084A12007FFE41 /* Initialization.swift */,
 				4F68D30B201165A400CC9612 /* RideRequestsTableViewCell.swift */,
 				4FAC684420053FBE001DD6A2 /* AppDelegate.swift */,
@@ -129,6 +133,7 @@
 				4F448EA1201661F2006CF50D /* DriverNavViewController.swift */,
 				4F043E8A203248E8009CA955 /* MapsNavViewController.swift */,
 				4F551981204876BB00D5F32A /* DriverArrivedViewController.swift */,
+				4F6A7799204BF336003E1DAB /* RiderInfoViewController.swift */,
 				4F5519832048AF8600D5F32A /* DestMapsNavViewController.swift */,
 				4FAC684820053FBE001DD6A2 /* Main.storyboard */,
 				4FAC684E20053FBE001DD6A2 /* Assests.xcassets */,
@@ -200,6 +205,9 @@
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -314,6 +322,7 @@
 				4FE790C8200B01C2007FFE41 /* EditAccountViewController.swift in Sources */,
 				4FE790BE20081396007FFE41 /* AccountViewController.swift in Sources */,
 				4FE790BC20081381007FFE41 /* SettingsViewController.swift in Sources */,
+				4F6A779A204BF336003E1DAB /* RiderInfoViewController.swift in Sources */,
 				4FAC684D20053FBE001DD6A2 /* BRIDGE.xcdatamodeld in Sources */,
 				4F551982204876BB00D5F32A /* DriverArrivedViewController.swift in Sources */,
 				4F448EA2201661F2006CF50D /* DriverNavViewController.swift in Sources */,
@@ -462,6 +471,7 @@
 			baseConfigurationReference = F441922D2BA653CC6DC1EC4F /* Pods-BRIDGE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BRIDGE/BRIDGE.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EN646ZUBQA;
 				INFOPLIST_FILE = BRIDGE/Info.plist;
@@ -478,6 +488,7 @@
 			baseConfigurationReference = 3A8E97233142AB4F086B4C6A /* Pods-BRIDGE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BRIDGE/BRIDGE.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EN646ZUBQA;
 				INFOPLIST_FILE = BRIDGE/Info.plist;

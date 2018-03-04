@@ -33,6 +33,7 @@ class DriverNavViewController: UIViewController, MKMapViewDelegate, CLLocationMa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "BRIDGE"
         
         directionsView.layer.cornerRadius = 10
         
@@ -106,10 +107,6 @@ class DriverNavViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             }
         }
         
-    }
-    
-    @IBAction func cancelButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "cancelRider", sender: self)
     }
     
     @IBAction func confirmButton(_ sender: UIButton) {
