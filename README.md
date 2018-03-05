@@ -5,6 +5,8 @@ BRIDGE is a company that bridges students and schools, by providing a trustworth
 
 This repository contains the beta versions of the BRIDGE app. It is not recommended that you use this version as a primary verison of the BRIDGE app. The most stable version of the BRIDGE app is on the App Store, and is recommended for regular use. Only fork and build this version if you have been requested by the owner or if you are a developer for BRIDGE.
 
+You can find updates on my twitter here: [@BK1031_OFFICIAL](https://twitter.com/BK1031_OFFICIAL)
+
 ## Instructions for Building BRIDGE App Beta
 
 Fork the repository.
