@@ -10,20 +10,22 @@ import UIKit
 
 class DriverInfoViewController: UIViewController {
 
+    @IBOutlet weak var driverImageView: UIImageView!
+    
+    @IBOutlet weak var driverNameLabel: UILabel!
+    
+    @IBOutlet weak var driverPhoneLabel: UILabel!
+    
+    @IBOutlet weak var driverCarColor: UILabel!
+    
+    @IBOutlet weak var driverCarMakeModel: UILabel!
+    
+    @IBOutlet weak var driverLicencePlate: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "My BRIDGE"
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func doneButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        
     }
     
 }

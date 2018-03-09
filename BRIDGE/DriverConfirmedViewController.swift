@@ -30,6 +30,8 @@ class DriverConfirmedViewController: UIViewController, MKMapViewDelegate, CLLoca
     var driverLong = 0.0
     var driverCoordinates = CLLocationCoordinate2DMake(0.0, 0.0)
     
+    var firstMapView = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,17 +52,52 @@ class DriverConfirmedViewController: UIViewController, MKMapViewDelegate, CLLoca
         
         let riderCoordinates = locationManager.location?.coordinate
         
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = driverCoordinates
+        annotation.title = "Driver"
+        annotation.subtitle = "This is the location of your BRIDGE."
+        self.mapView.addAnnotation(annotation)
+        
         databaseHandle = ref?.child("acceptedRides").child(userID).observe(.value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
+                self.mapView.removeAnnotation(annotation)
                 self.driverLat = dictionary["driverLat"] as! Double
                 self.driverLong = dictionary["driverLong"] as! Double
                 self.driverCoordinates = CLLocationCoordinate2DMake(self.driverLat, self.driverLong)
                 
-                let annotation = MKPointAnnotation()
                 annotation.coordinate = self.driverCoordinates
                 annotation.title = "Driver"
                 annotation.subtitle = "This is the location of your BRIDGE."
                 self.mapView.addAnnotation(annotation)
+                
+                if self.firstMapView {
+                    let sourcePlacemark = MKPlacemark(coordinate: riderCoordinates!)
+                    let destPlacemark = MKPlacemark(coordinate: self.driverCoordinates)
+                    
+                    let sourceItem = MKMapItem(placemark: sourcePlacemark)
+                    let destItem = MKMapItem(placemark: destPlacemark)
+                    
+                    let directionRequest = MKDirectionsRequest()
+                    directionRequest.source = sourceItem
+                    directionRequest.destination = destItem
+                    directionRequest.transportType = .automobile
+                    
+                    let directions = MKDirections(request: directionRequest)
+                    directions.calculate { (response, error) in
+                        guard let response = response else {
+                            if let error = error {
+                                print("Something Went WRONG!!! WHAAA!!!!")
+                            }
+                            return
+                        }
+                        let route = response.routes[0]
+                        
+                        let rekt = route.polyline.boundingMapRect
+                        self.mapView.setRegion(MKCoordinateRegionForMapRect(rekt), animated: true)
+                    }
+                    self.firstMapView = false
+                }
+                
             }
         })
         

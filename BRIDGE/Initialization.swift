@@ -12,6 +12,7 @@ import UIKit
 var name = ""
 var kidName = ""
 var email = ""
+var phone = ""
 var userID = ""
 var profilePic: UIImage = #imageLiteral(resourceName: "profile")
 var addressLine1 = ""
@@ -20,8 +21,16 @@ var addressState = ""
 var addressZIP = ""
 var addressFull = ""
 var accountBalance = "$0.00"
-var schoolLat = 37.276311
-var schoolLong = -121.827481
+var schoolLat = 37.275518
+var schoolLong = -121.825633
+
+var driverStatus = "false"
+
+var carYear = 0000
+var carColor = ""
+var carMake = ""
+var carModel = ""
+var carLicencePlate = ""
 
 var myRiderName = ""
 var myRiderID = ""

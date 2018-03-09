@@ -31,7 +31,7 @@ class MapsNavViewController: UIViewController, CLLocationManagerDelegate {
         let regionSpan = MKCoordinateRegionMakeWithDistance(riderCoordinates, regionDistance, regionDistance)
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
         
-        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: riderCoordinates, radius: 50, identifier: "Rider")
+        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: riderCoordinates, radius: 10, identifier: "Rider")
         
         locationManager.startMonitoring(for: geoFenceRegion)
         

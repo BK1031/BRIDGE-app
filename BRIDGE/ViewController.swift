@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -22,6 +24,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     let locationManager = CLLocationManager()
     
+    var ref:DatabaseReference?
+    var databaseHandle:DatabaseHandle?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         accountButton.setImage(profilePic, for: .normal)
@@ -33,7 +38,20 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         requestRideButton.layer.cornerRadius = 10
         driverButton.layer.cornerRadius = 10
         
+        ref = Database.database().reference()
+        
         if riderDropped {
+            let value = ["riderLat": nil, "riderLong": nil, "riderPickedUp": nil, "driverArrived": nil, "driverLat": nil, "driverLong": nil, "riderName": nil] as [String : Any?]
+            let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
+            rideReference?.updateChildValues(value)
+            
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yy"
+            let rideDate = formatter.string(from: date)
+            let usersReference = ref?.child("users").child(userID).child("driveHistory").childByAutoId()
+            let values = ["destination": "School", "riderName": myRiderName, "date": rideDate] as [String : Any?]
+            usersReference?.updateChildValues(values)
             myRiderName = ""
             myRiderID = ""
             myRiderLat = 0.0

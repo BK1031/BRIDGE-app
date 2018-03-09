@@ -27,16 +27,12 @@ class DestMapsNavViewController: UIViewController, CLLocationManagerDelegate {
         
         ref = Database.database().reference()
         
-        let value = ["riderLat": nil, "riderLong": nil, "riderPickedUp": nil, "driverArrived": nil, "driverLat": nil, "driverLong": nil, "riderName": nil] as [String : Any?]
-        let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
-        rideReference?.updateChildValues(value)
-        
         let regionDistance:CLLocationDistance = 1000
         let riderCoordinates = CLLocationCoordinate2DMake(schoolLat, schoolLong)
         let regionSpan = MKCoordinateRegionMakeWithDistance(riderCoordinates, regionDistance, regionDistance)
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
         
-        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: riderCoordinates, radius: 50, identifier: "Destination")
+        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: riderCoordinates, radius: 10, identifier: "Destination")
         
         locationManager.startMonitoring(for: geoFenceRegion)
         
