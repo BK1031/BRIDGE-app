@@ -31,6 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         super.viewDidLoad()
         accountButton.setImage(profilePic, for: .normal)
         accountButton.imageView?.layer.cornerRadius = (accountButton.imageView?.frame.height)! / 2
+        
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
@@ -79,7 +80,20 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
 
     @IBAction func requestRideButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "requestRide", sender: self)
+        let alert = UIAlertController(title: "Select Destination", message: "Select whether you want to be dropped off at home or at school. You can configure these locations in settings.", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "School", style: .default) { (action) in
+            destination = "school"
+            self.performSegue(withIdentifier: "requestRide", sender: self)
+        }
+        let action2 = UIAlertAction(title: "Home", style: .default) { (alert) in
+            destination = "home"
+            self.performSegue(withIdentifier: "requestRide", sender: self)
+        }
+        let action3 = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(action1)
+        alert.addAction(action2)
+        alert.addAction(action3)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func driveButton(_ sender: UIButton) {

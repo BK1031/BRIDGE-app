@@ -15,6 +15,8 @@ class AccountViewController: UIViewController {
     
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var phoneLabel: UILabel!
+    
     @IBOutlet weak var accountBalanceLabel: UILabel!
     
     @IBOutlet weak var studentLabel: UILabel!
@@ -37,6 +39,7 @@ class AccountViewController: UIViewController {
         signOutButton.layer.cornerRadius = 10
         nameLabel.text = name
         emailLabel.text = email
+        phoneLabel.text = phone
         studentLabel.text = kidName
         addressLabel.text = addressFull
         schoolLabel.text = "Valley Christian High School"
@@ -72,7 +75,7 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func signOutButton(_ sender: UIButton) {
-        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let sheet = UIAlertController(title: nil, message: "Are you sure you want to sign out?", preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let signOutAction = UIAlertAction(title: "Sign Out", style: .destructive) { (action) in
             name = ""

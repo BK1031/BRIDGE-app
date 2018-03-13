@@ -26,6 +26,8 @@ var schoolLong = -121.825633
 
 var driverStatus = "false"
 
+var destination = ""
+
 var carYear = 0000
 var carColor = ""
 var carMake = ""

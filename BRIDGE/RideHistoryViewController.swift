@@ -14,6 +14,10 @@ class RideHistoryViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var driverRiderNameLabel: UILabel!
+    
+    @IBOutlet weak var historySegmentController: UISegmentedControl!
+    
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
@@ -32,6 +36,7 @@ class RideHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         
         ref = Database.database().reference()
         
+        driverRiderNameLabel.text = "Driver Name:"
         databaseHandle = ref?.child("users").child(userID).child("rideHistory").observe(.value, with: { (snapshot) in
             if snapshot.childrenCount > 0 {
                 self.driversList.removeAll()
@@ -50,7 +55,7 @@ class RideHistoryViewController: UIViewController, UITableViewDelegate, UITableV
                 }
                 self.tableView.reloadData()
             }
-            
+                
             else {
                 self.driversList.removeAll()
                 self.dateList.removeAll()
@@ -59,8 +64,75 @@ class RideHistoryViewController: UIViewController, UITableViewDelegate, UITableV
             }
             
         })
-        
     }
+    
+    @IBAction func historySwitcher(_ sender: UISegmentedControl) {
+        
+        switch historySegmentController.selectedSegmentIndex {
+        case 0:
+            driverRiderNameLabel.text = "Driver Name:"
+            databaseHandle = ref?.child("users").child(userID).child("rideHistory").observe(.value, with: { (snapshot) in
+                if snapshot.childrenCount > 0 {
+                    self.driversList.removeAll()
+                    self.dateList.removeAll()
+                    self.destinationList.removeAll()
+                    
+                    for ride in snapshot.children.allObjects as! [DataSnapshot] {
+                        let history = ride.value as? [String: AnyObject]
+                        self.driverName = history!["driverName"] as! String
+                        self.date = history!["date"] as! String
+                        self.destination = history!["destination"] as! String
+                        
+                        self.driversList.append(self.driverName)
+                        self.dateList.append(self.date)
+                        self.destinationList.append(self.destination)
+                    }
+                    self.tableView.reloadData()
+                }
+                    
+                else {
+                    self.driversList.removeAll()
+                    self.dateList.removeAll()
+                    self.destinationList.removeAll()
+                    
+                }
+                
+            })
+        case 1:
+            driverRiderNameLabel.text = "Rider Name:"
+            navigationController?.title = "Drive History"
+            databaseHandle = ref?.child("users").child(userID).child("driveHistory").observe(.value, with: { (snapshot) in
+                if snapshot.childrenCount > 0 {
+                    self.driversList.removeAll()
+                    self.dateList.removeAll()
+                    self.destinationList.removeAll()
+                    
+                    for ride in snapshot.children.allObjects as! [DataSnapshot] {
+                        let history = ride.value as? [String: AnyObject]
+                        self.driverName = history!["riderName"] as! String
+                        self.date = history!["date"] as! String
+                        self.destination = history!["destination"] as! String
+                        
+                        self.driversList.append(self.driverName)
+                        self.dateList.append(self.date)
+                        self.destinationList.append(self.destination)
+                    }
+                    self.tableView.reloadData()
+                }
+                    
+                else {
+                    self.driversList.removeAll()
+                    self.dateList.removeAll()
+                    self.destinationList.removeAll()
+                    
+                }
+                
+            })
+        default:
+            break
+        }
+    }
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return driversList.count

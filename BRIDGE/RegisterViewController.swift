@@ -16,6 +16,8 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var phoneTextField: UITextField!
+    
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var confirmPasswordTextField: UITextField!
@@ -55,15 +57,16 @@ class RegisterViewController: UIViewController {
                     self.registrationStatus.textColor = UIColor.green
                     
                     name = self.nameTextField.text!
+                    phone = self.phoneTextField.text!
                     let user = Auth.auth().currentUser
                     if let user = user {
                         userID = user.uid
                         email = user.email!
-                        // ...
+                        
                     }
                     
                     let usersReference = self.ref?.child("users").child(userID)
-                    let values = ["name": name, "email": email, "studentName": kidName, "address": addressFull, "accountBalance": accountBalance]
+                    let values = ["name": name, "email": email, "studentName": kidName, "address": addressFull, "accountBalance": accountBalance, "phone": phone]
                     usersReference?.updateChildValues(values)
                     
                     self.performSegue(withIdentifier: "register", sender: self)
@@ -77,14 +80,4 @@ class RegisterViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
