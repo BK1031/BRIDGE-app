@@ -97,7 +97,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     @IBAction func driveButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "drive", sender: self)
+        if driverStatus {
+            performSegue(withIdentifier: "drive", sender: self)
+        }
+        else {
+            let alert = UIAlertController(title: "Not Verified", message: "You are not verified as a BRIDGE driver. Please go to the settings page to file a verification request.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Got it", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func accountButton(_ sender: UIButton) {

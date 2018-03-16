@@ -24,7 +24,7 @@ var accountBalance = "$0.00"
 var schoolLat = 37.275518
 var schoolLong = -121.825633
 
-var driverStatus = "false"
+var driverStatus = false
 
 var destination = ""
 

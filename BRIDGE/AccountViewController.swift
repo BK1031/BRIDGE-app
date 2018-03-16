@@ -47,11 +47,12 @@ class AccountViewController: UIViewController {
         accountBalanceLabel.text = accountBalance
         profileImageView.image = profilePic
         profileImageView.layer.cornerRadius = (profileImageView.frame.height) / 2
-        if driverStatus == "verified" {
+        if driverStatus {
             driverStatusLabel.textColor = UIColor.green
             driverStatusLabel.text = "Verified"
         }
-        else if driverStatus == "Pending" {
+        else if driverStatus == false {
+            // Myrons shit: 0 0 3 4 4 4 3 3.5 3 4.5 3 4.5
             driverStatusLabel.textColor = UIColor.orange
             driverStatusLabel.text = "Pending"
         }

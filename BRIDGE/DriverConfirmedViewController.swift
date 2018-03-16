@@ -50,6 +50,10 @@ class DriverConfirmedViewController: UIViewController, MKMapViewDelegate, CLLoca
             locationManager.startUpdatingLocation()
         }
         
+        let value = ["riderPhone": phone] as [String : Any]
+        let rideReference = self.ref?.child("acceptedRides").child(userID)
+        rideReference?.updateChildValues(value)
+        
         let riderCoordinates = locationManager.location?.coordinate
         
         let annotation = MKPointAnnotation()

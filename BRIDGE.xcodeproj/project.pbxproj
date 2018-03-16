@@ -11,7 +11,6 @@
 		4F043E8B203248E8009CA955 /* MapsNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F043E8A203248E8009CA955 /* MapsNavViewController.swift */; };
 		4F07899B20472106000CF606 /* RideHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07899A20472106000CF606 /* RideHistoryTableViewCell.swift */; };
 		4F0D10482053B59F0082FB12 /* GeneralAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D10472053B59F0082FB12 /* GeneralAboutViewController.swift */; };
-		4F0D104C205450740082FB12 /* DestPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D104B205450740082FB12 /* DestPickerViewController.swift */; };
 		4F0D104E205469160082FB12 /* ConnectionErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D104D205469160082FB12 /* ConnectionErrorViewController.swift */; };
 		4F448EA2201661F2006CF50D /* DriverNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F448EA1201661F2006CF50D /* DriverNavViewController.swift */; };
 		4F45A9C0202D4C5E001A10A4 /* DriverConfirmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */; };
@@ -49,7 +48,6 @@
 		4F043E8A203248E8009CA955 /* MapsNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsNavViewController.swift; sourceTree = "<group>"; };
 		4F07899A20472106000CF606 /* RideHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		4F0D10472053B59F0082FB12 /* GeneralAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAboutViewController.swift; sourceTree = "<group>"; };
-		4F0D104B205450740082FB12 /* DestPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestPickerViewController.swift; sourceTree = "<group>"; };
 		4F0D104D205469160082FB12 /* ConnectionErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionErrorViewController.swift; sourceTree = "<group>"; };
 		4F448EA1201661F2006CF50D /* DriverNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverNavViewController.swift; sourceTree = "<group>"; };
 		4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverConfirmedViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				4FCE67C2204CC6C5002E6FE9 /* HelpViewController.swift */,
 				4FE790BD20081396007FFE41 /* AccountViewController.swift */,
 				4FE790C7200B01C1007FFE41 /* EditAccountViewController.swift */,
-				4F0D104B205450740082FB12 /* DestPickerViewController.swift */,
 				4F9A5250200E746C000F268F /* RiderViewController.swift */,
 				4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */,
 				4F45A9C1202D4D0F001A10A4 /* DriverInfoViewController.swift */,
@@ -350,7 +347,6 @@
 				4FCE67C3204CC6C5002E6FE9 /* HelpViewController.swift in Sources */,
 				4FE790C020084A12007FFE41 /* Initialization.swift in Sources */,
 				4F45A9C2202D4D0F001A10A4 /* DriverInfoViewController.swift in Sources */,
-				4F0D104C205450740082FB12 /* DestPickerViewController.swift in Sources */,
 				4FAC684720053FBE001DD6A2 /* ViewController.swift in Sources */,
 				4FAC684520053FBE001DD6A2 /* AppDelegate.swift in Sources */,
 				4F0D10482053B59F0082FB12 /* GeneralAboutViewController.swift in Sources */,
@@ -499,7 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bk1031.BRIDGE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -516,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bk1031.BRIDGE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

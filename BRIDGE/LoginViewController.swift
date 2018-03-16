@@ -61,6 +61,7 @@ class LoginViewController: UIViewController {
                         kidName = dictionary["studentName"] as! String
                         addressFull = dictionary["address"] as! String
                         phone = dictionary["phone"] as! String
+                        driverStatus = dictionary["driverStatus"] as! Bool
                     }
                     
                 }, withCancel: nil)
