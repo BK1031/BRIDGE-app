@@ -36,7 +36,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         
         ref = Database.database().reference()
         let usersReference = self.ref?.child("rideRequests").child(userID)
-        let values = ["riderName": kidName, "lat": 0.0, "long": 0.0, "riderID": userID, "rideAccepted": "false"] as [String : Any]
+        let values = ["riderName": kidName, "lat": 0.0, "long": 0.0, "riderID": userID, "rideAccepted": "false", "dest": destination] as [String : Any]
         usersReference?.updateChildValues(values)
         
         databaseHandle = ref?.child("rideRequests").child(userID).child("rideAccepted").observe(.value, with: { (snapshot) in
@@ -81,7 +81,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     @IBAction func cancelRideButton(_ sender: UIButton) {
         locationManager.stopUpdatingLocation()
-        let values = ["riderName": nil, "riderAddress": nil, "lat": nil, "long": nil, "riderID": nil, "rideAccepted": nil] as [String : Any?]
+        let values = ["riderName": nil, "riderAddress": nil, "lat": nil, "long": nil, "riderID": nil, "rideAccepted": nil, "dest": nil] as [String : Any?]
         let usersReference = self.ref?.child("rideRequests").child(userID)
         usersReference?.updateChildValues(values)
         performSegue(withIdentifier: "cancelRide", sender: self)

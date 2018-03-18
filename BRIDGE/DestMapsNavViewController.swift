@@ -18,6 +18,9 @@ class DestMapsNavViewController: UIViewController, CLLocationManagerDelegate {
     
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
+    
+    var destLat = 0.0
+    var destLong = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,22 @@ class DestMapsNavViewController: UIViewController, CLLocationManagerDelegate {
         
         ref = Database.database().reference()
         
+        if myRiderDest == "School" {
+            destLat = schoolLat
+            destLong = schoolLong
+        }
+        
+        else if myRiderDest == "Home" {
+            databaseHandle = ref?.child("users").child(myRiderID).observe(.value, with: { (snapshot) in
+                if let destDictionary = snapshot.value as? [String: AnyObject] {
+                    self.destLat = destDictionary["homeLat"] as! Double
+                    self.destLong = destDictionary["homeLong"] as! Double
+                }
+            })
+        }
+        
         let regionDistance:CLLocationDistance = 1000
-        let riderCoordinates = CLLocationCoordinate2DMake(schoolLat, schoolLong)
+        let riderCoordinates = CLLocationCoordinate2DMake(destLat, destLong)
         let regionSpan = MKCoordinateRegionMakeWithDistance(riderCoordinates, regionDistance, regionDistance)
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
         
@@ -55,7 +72,7 @@ class DestMapsNavViewController: UIViewController, CLLocationManagerDelegate {
         formatter.dateFormat = "dd/MM/yy"
         let rideDate = formatter.string(from: date)
         let usersReference = self.ref?.child("users").child(myRiderID).child("rideHistory").childByAutoId()
-        let values = ["destination": "School", "driverName": name, "date": rideDate] as [String : Any?]
+        let values = ["destination": myRiderDest, "driverName": name, "date": rideDate] as [String : Any?]
         usersReference?.updateChildValues(values)
         riderDropped = true
         performSegue(withIdentifier: "driverFinishRide", sender: self)

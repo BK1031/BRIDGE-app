@@ -30,11 +30,13 @@ class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     var riderLong = 0.0
     var riderCoordinates = ""
     var riderAddress = ""
+    var riderDest = ""
     
     var riderIDs = [String]()
     var rideRequests = [String]()
     var rideLat = [Double]()
     var rideLong = [Double]()
+    var rideDests = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,7 @@ class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 self.riderIDs.removeAll()
                 self.rideLat.removeAll()
                 self.rideLong.removeAll()
+                self.rideDests.removeAll()
                 
                 for rider in snapshot.children.allObjects as! [DataSnapshot] {
                     let request = rider.value as? [String: AnyObject]
@@ -61,11 +64,13 @@ class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                     self.riderID = request!["riderID"] as! String
                     self.riderLat = request!["lat"] as! Double
                     self.riderLong = request!["long"] as! Double
+                    self.riderDest = request!["dest"] as! String
                     
                     self.rideRequests.append(self.riderName)
                     self.riderIDs.append(self.riderID)
                     self.rideLat.append(self.riderLat)
                     self.rideLong.append(self.riderLong)
+                    self.rideDests.append(self.riderDest)
                 }
                 self.tableView.reloadData()
             }
@@ -75,6 +80,7 @@ class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 self.rideLong.removeAll()
                 self.riderIDs.removeAll()
                 self.rideRequests.removeAll()
+                self.rideDests.removeAll()
                 self.tableView.reloadData()
             }
             
@@ -105,7 +111,12 @@ class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
         
         cell.riderName.text = rideRequests[indexPath.row]
-        cell.riderLocation.text = "Valley Christian High School"
+        if rideDests[indexPath.row] == "School" {
+            cell.riderLocation.text = "Valley Christian High School"
+        }
+        else {
+            cell.riderLocation.text = "Home"
+        }
         
         cell.riderPic.layer.cornerRadius = cell.riderPic.frame.height / 2
         
@@ -117,6 +128,7 @@ class DriverViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         myRiderID = self.riderIDs[indexPath.row]
         myRiderLat = self.rideLat[indexPath.row]
         myRiderLong = self.rideLong[indexPath.row]
+        myRiderDest = self.rideDests[indexPath.row]
         
         performSegue(withIdentifier: "driverNav", sender: nil)
     }

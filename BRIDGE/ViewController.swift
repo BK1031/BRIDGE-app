@@ -58,12 +58,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             formatter.dateFormat = "dd/MM/yy"
             let rideDate = formatter.string(from: date)
             let usersReference = ref?.child("users").child(userID).child("driveHistory").childByAutoId()
-            let values = ["destination": "School", "riderName": myRiderName, "date": rideDate] as [String : Any?]
+            let values = ["destination": myRiderDest, "riderName": myRiderName, "date": rideDate] as [String : Any?]
             usersReference?.updateChildValues(values)
             myRiderName = ""
             myRiderID = ""
             myRiderLat = 0.0
             myRiderLong = 0.0
+            myRiderDest = ""
             let alert = UIAlertController(title: "Ride Finished", message: "Your Rider has been dropped off. Thank you for driving with BRIGDE!", preferredStyle: .alert)
             let action = UIAlertAction(title: "Got it", style: .default, handler: nil)
             alert.addAction(action)
@@ -89,17 +90,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBAction func requestRideButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "Select Destination", message: "Select whether you want to be dropped off at home or at school. You can configure these locations in settings.", preferredStyle: .alert)
         let action1 = UIAlertAction(title: "School", style: .default) { (action) in
-            destination = "school"
+            destination = "School"
             self.performSegue(withIdentifier: "requestRide", sender: self)
         }
         let action2 = UIAlertAction(title: "Home", style: .default) { (alert) in
-            destination = "home"
+            destination = "Home"
             self.performSegue(withIdentifier: "requestRide", sender: self)
         }
         let action3 = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(action1)
         alert.addAction(action2)
-        alert.addAction(action3)
+//        alert.addAction(action3)
         self.present(alert, animated: true, completion: nil)
     }
     

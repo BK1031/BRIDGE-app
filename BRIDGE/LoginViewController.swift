@@ -67,6 +67,8 @@ class LoginViewController: UIViewController {
                         carColor = dictionary["carColor"] as! String
                         carYear = dictionary["carYear"] as! String
                         carLicencePlate = dictionary["carPlate"] as! String
+                        homeLat = dictionary["homeLat"] as! Double
+                        homeLong = dictionary["homeLong"] as! Double
                     }
                     
                 }, withCancel: nil)

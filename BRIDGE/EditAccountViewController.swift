@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import CoreLocation
 
 class EditAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -92,7 +93,19 @@ class EditAccountViewController: UIViewController, UIImagePickerControllerDelega
             addressFull = addressLine1 + ", " + addressCity + ", " + addressState + " " + addressZIP
         }
         
-        let data = ["studentName": kidName, "address": addressFull]
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(addressFull) { (placemarks, error) in
+            if (error) != nil {
+                print("Geocode ERROR!!!")
+            }
+            if let placemark = placemarks?.first {
+                let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                homeLat = coordinates.latitude
+                homeLong = coordinates.longitude
+            }
+        }
+        
+        let data = ["studentName": kidName, "address": addressFull, "homeLat": homeLat, "homeLong": homeLong] as [String : Any]
         self.ref?.child("users").child(userID).updateChildValues(data)
         
         dismiss(animated: true, completion: nil)

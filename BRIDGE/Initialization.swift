@@ -20,6 +20,8 @@ var addressCity = ""
 var addressState = ""
 var addressZIP = ""
 var addressFull = ""
+var homeLat = 0.0
+var homeLong = 0.0
 var accountBalance = "$0.00"
 var schoolLat = 37.275518
 var schoolLong = -121.825633
@@ -38,6 +40,7 @@ var myRiderName = ""
 var myRiderID = ""
 var myRiderLat = 0.0
 var myRiderLong = 0.0
+var myRiderDest = ""
 
 var riderDropped = false
 
