@@ -15,6 +15,10 @@ class ConnectionErrorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let connectedRef = Database.database().reference(withPath: ".info/connected")
         connectedRef.observe(.value, with: { snapshot in
             if snapshot.value as? Bool ?? false {
@@ -25,10 +29,6 @@ class ConnectionErrorViewController: UIViewController {
                 self.performSegue(withIdentifier: "toChecker", sender: self)
             }
         })
-    }
-
-    @IBAction func retryButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "retryConnection", sender: self)
     }
     
 }

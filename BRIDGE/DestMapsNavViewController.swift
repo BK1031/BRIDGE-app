@@ -45,6 +45,11 @@ class DestMapsNavViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("Arrived at Rider Drop-Off Point")
+        
+        let value = ["riderLat": nil, "riderLong": nil, "riderPickedUp": nil, "driverArrived": nil, "driverLat": nil, "driverLong": nil, "riderName": nil] as [String : Any?]
+        let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
+        rideReference?.updateChildValues(value)
+        
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yy"

@@ -20,6 +20,8 @@ class DriverArrivedViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var notificationView: UIView!
+    
     var riderLat = 0.0
     var riderLong = 0.0
     
@@ -34,6 +36,7 @@ class DriverArrivedViewController: UIViewController, MKMapViewDelegate, CLLocati
         super.viewDidLoad()
         myRiderButton.layer.cornerRadius = 10
         pickedRiderButton.layer.cornerRadius = 10
+        notificationView.layer.cornerRadius = 10
         
         ref = Database.database().reference()
         

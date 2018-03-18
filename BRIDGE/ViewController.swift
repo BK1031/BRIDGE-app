@@ -41,6 +41,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         ref = Database.database().reference()
         
+        if carLicencePlate == "" {
+            let alert = UIAlertController(title: "Set Car Details", message: "Don't forget to go to the settings page and set your vehicle information.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Got it", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+        
         if riderDropped {
             let value = ["riderLat": nil, "riderLong": nil, "riderPickedUp": nil, "driverArrived": nil, "driverLat": nil, "driverLong": nil, "riderName": nil] as [String : Any?]
             let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
@@ -97,8 +104,22 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     @IBAction func driveButton(_ sender: UIButton) {
-        if driverStatus {
-            performSegue(withIdentifier: "drive", sender: self)
+        if driverStatus == "Verified" {
+            if carLicencePlate == "" {
+                let alert = UIAlertController(title: "Set Car Details", message: "You have to go to the settings page and set your vehicle information before you can be a driver.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Got it", style: .default, handler: nil)
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
+            }
+            else {
+                performSegue(withIdentifier: "drive", sender: self)
+            }
+        }
+        else if driverStatus == "Pending" {
+            let alert = UIAlertController(title: "Verification Pending", message: "Your driver verification pending. Please allow 5-7 days to process your request.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Got it", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
         }
         else {
             let alert = UIAlertController(title: "Not Verified", message: "You are not verified as a BRIDGE driver. Please go to the settings page to file a verification request.", preferredStyle: .alert)

@@ -66,7 +66,7 @@ class RegisterViewController: UIViewController {
                     }
                     
                     let usersReference = self.ref?.child("users").child(userID)
-                    let values = ["name": name, "email": email, "studentName": kidName, "address": addressFull, "accountBalance": accountBalance, "phone": phone, "driverStatus": driverStatus] as [String : Any]
+                    let values = ["name": name, "email": email, "studentName": kidName, "address": addressFull, "accountBalance": accountBalance, "phone": phone, "driverStatus": driverStatus, "carMake": carMake, "carModel": carModel, "carColor": carColor, "carYear": carYear, "carPlate": carLicencePlate] as [String : Any]
                     usersReference?.updateChildValues(values)
                     
                     self.performSegue(withIdentifier: "register", sender: self)

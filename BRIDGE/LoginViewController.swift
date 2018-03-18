@@ -61,7 +61,12 @@ class LoginViewController: UIViewController {
                         kidName = dictionary["studentName"] as! String
                         addressFull = dictionary["address"] as! String
                         phone = dictionary["phone"] as! String
-                        driverStatus = dictionary["driverStatus"] as! Bool
+                        driverStatus = dictionary["driverStatus"] as! String
+                        carMake = dictionary["carMake"] as! String
+                        carModel = dictionary["carModel"] as! String
+                        carColor = dictionary["carColor"] as! String
+                        carYear = dictionary["carYear"] as! String
+                        carLicencePlate = dictionary["carPlate"] as! String
                     }
                     
                 }, withCancel: nil)

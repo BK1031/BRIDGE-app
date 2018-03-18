@@ -24,6 +24,8 @@ class EditAccountViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var profileButton: UIButton!
     
+    @IBOutlet weak var saveChangesButton: UIButton!
+    
     var ref:DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
@@ -33,6 +35,7 @@ class EditAccountViewController: UIViewController, UIImagePickerControllerDelega
         ref = Database.database().reference()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         profileButton.layer.cornerRadius = 10
+        saveChangesButton.layer.cornerRadius = 10
         self.navigationItem.title = "Edit Account"
     }
 
