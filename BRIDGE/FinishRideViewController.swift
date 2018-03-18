@@ -26,6 +26,7 @@ class FinishRideViewController: UIViewController {
     }
     
     @IBAction func finishRideButton(_ sender: UIButton) {
+        destination = ""
         performSegue(withIdentifier: "finishRide", sender: self)
     }
 }
