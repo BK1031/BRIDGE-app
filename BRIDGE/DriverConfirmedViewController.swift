@@ -54,8 +54,6 @@ class DriverConfirmedViewController: UIViewController, MKMapViewDelegate, CLLoca
         let rideReference = self.ref?.child("acceptedRides").child(userID)
         rideReference?.updateChildValues(value)
         
-        let riderCoordinates = locationManager.location?.coordinate
-        
         let annotation = MKPointAnnotation()
         annotation.coordinate = driverCoordinates
         annotation.title = "Driver"
@@ -75,7 +73,7 @@ class DriverConfirmedViewController: UIViewController, MKMapViewDelegate, CLLoca
                 self.mapView.addAnnotation(annotation)
                 
                 if self.firstMapView {
-                    let sourcePlacemark = MKPlacemark(coordinate: riderCoordinates!)
+                    let sourcePlacemark = MKPlacemark(coordinate: self.riderLocation!)
                     let destPlacemark = MKPlacemark(coordinate: self.driverCoordinates)
                     
                     let sourceItem = MKMapItem(placemark: sourcePlacemark)

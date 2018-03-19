@@ -46,7 +46,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                     
                     self.ref = Database.database().reference()
                     let usersReference = self.ref?.child("rideRequests").child(userID)
-                    let values = ["riderName": nil, "lat": nil, "long": nil, "riderID": nil, "rideAccepted": nil] as [String : Any?]
+                    let values = ["riderName": nil, "lat": nil, "long": nil, "riderID": nil, "rideAccepted": nil, "dest": nil] as [String : Any?]
                     usersReference?.updateChildValues(values)
                     
                     let alert = UIAlertController(title: "Driver Confirmed", message: "A driver has accepted your BRIDGE request!", preferredStyle: .alert)

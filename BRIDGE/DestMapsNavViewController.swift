@@ -45,15 +45,15 @@ class DestMapsNavViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         let regionDistance:CLLocationDistance = 1000
-        let riderCoordinates = CLLocationCoordinate2DMake(destLat, destLong)
-        let regionSpan = MKCoordinateRegionMakeWithDistance(riderCoordinates, regionDistance, regionDistance)
+        let destCoordinates = CLLocationCoordinate2DMake(destLat, destLong)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(destCoordinates, regionDistance, regionDistance)
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
         
-        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: riderCoordinates, radius: 10, identifier: "Destination")
+        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: destCoordinates, radius: 10, identifier: "Destination")
         
         locationManager.startMonitoring(for: geoFenceRegion)
         
-        let placemark = MKPlacemark(coordinate: riderCoordinates)
+        let placemark = MKPlacemark(coordinate: destCoordinates)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = "Drop-Off Location"
         mapItem.openInMaps(launchOptions: options)
@@ -62,10 +62,6 @@ class DestMapsNavViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("Arrived at Rider Drop-Off Point")
-        
-        let value = ["riderLat": nil, "riderLong": nil, "riderPickedUp": nil, "driverArrived": nil, "driverLat": nil, "driverLong": nil, "riderName": nil] as [String : Any?]
-        let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
-        rideReference?.updateChildValues(value)
         
         let date = Date()
         let formatter = DateFormatter()

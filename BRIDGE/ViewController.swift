@@ -49,7 +49,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
         
         if riderDropped {
-            let value = ["riderLat": nil, "riderLong": nil, "riderPickedUp": nil, "driverArrived": nil, "driverLat": nil, "driverLong": nil, "riderName": nil] as [String : Any?]
+            let value = ["riderLat": nil, "riderLong": nil, "riderPickedUp": nil, "driverArrived": nil, "driverLat": nil, "driverLong": nil, "riderName": nil, "carMake": nil, "carModel": nil, "carColor": nil, "carYear": nil, "carPlate": nil, "driverName": nil, "driverPhone": nil, "riderPhone": nil] as [String : Any?]
             let rideReference = self.ref?.child("acceptedRides").child(myRiderID)
             rideReference?.updateChildValues(value)
             
