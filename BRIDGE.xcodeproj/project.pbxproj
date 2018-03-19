@@ -33,6 +33,7 @@
 		4FAC685B20057054001DD6A2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAC685A20057054001DD6A2 /* MapKit.framework */; };
 		4FAC685D20057097001DD6A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAC685C20057097001DD6A2 /* CoreLocation.framework */; };
 		4FAC685F2006BF96001DD6A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC685E2006BF95001DD6A2 /* GoogleService-Info.plist */; };
+		4FB4DA9B2060287200363A3A /* DriverPickedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB4DA9A2060287200363A3A /* DriverPickedViewController.swift */; };
 		4FCE67C3204CC6C5002E6FE9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCE67C2204CC6C5002E6FE9 /* HelpViewController.swift */; };
 		4FE790B62006C955007FFE41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790B52006C955007FFE41 /* LoginViewController.swift */; };
 		4FE790B82007D2BD007FFE41 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE790B72007D2BD007FFE41 /* RegisterViewController.swift */; };
@@ -75,6 +76,7 @@
 		4FAC685A20057054001DD6A2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4FAC685C20057097001DD6A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4FAC685E2006BF95001DD6A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4FB4DA9A2060287200363A3A /* DriverPickedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverPickedViewController.swift; sourceTree = "<group>"; };
 		4FCE67C2204CC6C5002E6FE9 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		4FE790B52006C955007FFE41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FE790B72007D2BD007FFE41 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				4F9A5250200E746C000F268F /* RiderViewController.swift */,
 				4F45A9BF202D4C5E001A10A4 /* DriverConfirmedViewController.swift */,
 				4F45A9C1202D4D0F001A10A4 /* DriverInfoViewController.swift */,
+				4FB4DA9A2060287200363A3A /* DriverPickedViewController.swift */,
 				4F5519852048FC7E00D5F32A /* FinishRideViewController.swift */,
 				4F9A5252200E7473000F268F /* DriverViewController.swift */,
 				4F448EA1201661F2006CF50D /* DriverNavViewController.swift */,
@@ -347,6 +350,7 @@
 				4FF411F3205E613700A788EC /* SettingsCarInfoViewController.swift in Sources */,
 				4F448EA2201661F2006CF50D /* DriverNavViewController.swift in Sources */,
 				4F68D30C201165A400CC9612 /* RideRequestsTableViewCell.swift in Sources */,
+				4FB4DA9B2060287200363A3A /* DriverPickedViewController.swift in Sources */,
 				4FA488C020576C8D00339DA0 /* ConnectionCheckerViewController.swift in Sources */,
 				4FE790BA2008136C007FFE41 /* RideHistoryViewController.swift in Sources */,
 				4FF411F5205E6BB000A788EC /* SettingsAboutTitleViewController.swift in Sources */,
