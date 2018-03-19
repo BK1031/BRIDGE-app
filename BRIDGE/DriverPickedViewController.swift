@@ -19,6 +19,8 @@ class DriverPickedViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     @IBOutlet weak var progressLabel: UILabel!
     
+    @IBOutlet weak var endRideButton: UIButton!
+    
     let locationManager = CLLocationManager()
     var driverLocation:CLLocationCoordinate2D?
     
@@ -28,9 +30,12 @@ class DriverPickedViewController: UIViewController, MKMapViewDelegate, CLLocatio
     var destLat = 0.0
     var destLong = 0.0
     
+    var arrived = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationView.layer.cornerRadius = 10
+        endRideButton.layer.cornerRadius = 10
         progressLabel.text = "Ride is in progress. The ride will automatically end once you arrive at " + destination + "."
         
         mapView.delegate = self
@@ -107,8 +112,27 @@ class DriverPickedViewController: UIViewController, MKMapViewDelegate, CLLocatio
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("Rider Arrived at Destination!")
-        
-        performSegue(withIdentifier: "riderPicked", sender: self)
+        arrived = true
+        endRideButton.setTitle("Done", for: .normal)
+        progressLabel.text = "You have arrived at \(destination). Thank you for using BRIDGE!"
     }
+    
+    @IBAction func endRide(_ sender: UIButton) {
+        if arrived == false {
+            let alert = UIAlertController(title: "Confirm Arrival", message: "Are you sure you have arrived at your destination? It looks like your ride is still in progress according to your device location.", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            let end = UIAlertAction(title: "End Ride", style: .destructive, handler: { (action) in
+                self.performSegue(withIdentifier: "riderPicked", sender: self)
+            })
+            alert.addAction(cancel)
+            alert.addAction(end)
+            present(alert, animated: true, completion: nil)
+        }
+        else {
+            destination = ""
+            performSegue(withIdentifier: "rideFinish", sender: self)
+        }
+    }
+    
 
 }
