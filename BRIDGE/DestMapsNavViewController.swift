@@ -65,7 +65,7 @@ class DestMapsNavViewController: UIViewController, CLLocationManagerDelegate {
         
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yy"
+        formatter.dateFormat = " MM/dd/yy"
         let rideDate = formatter.string(from: date)
         let usersReference = self.ref?.child("users").child(myRiderID).child("rideHistory").childByAutoId()
         let values = ["destination": myRiderDest, "driverName": name, "date": rideDate] as [String : Any?]

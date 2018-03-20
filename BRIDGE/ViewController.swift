@@ -55,7 +55,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
             let date = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yy"
+            formatter.dateFormat = "MM/dd/yy"
             let rideDate = formatter.string(from: date)
             let usersReference = ref?.child("users").child(userID).child("driveHistory").childByAutoId()
             let values = ["destination": myRiderDest, "riderName": myRiderName, "date": rideDate] as [String : Any?]
