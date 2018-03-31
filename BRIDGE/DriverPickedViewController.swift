@@ -122,7 +122,8 @@ class DriverPickedViewController: UIViewController, MKMapViewDelegate, CLLocatio
             let alert = UIAlertController(title: "Confirm Arrival", message: "Are you sure you have arrived at your destination? It looks like your ride is still in progress according to your device location.", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
             let end = UIAlertAction(title: "End Ride", style: .destructive, handler: { (action) in
-                self.performSegue(withIdentifier: "riderPicked", sender: self)
+                destination = ""
+                self.performSegue(withIdentifier: "rideFinish", sender: self)
             })
             alert.addAction(cancel)
             alert.addAction(end)
