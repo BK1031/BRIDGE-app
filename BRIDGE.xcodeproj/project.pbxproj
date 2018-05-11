@@ -209,7 +209,6 @@
 				4FAC683E20053FBE001DD6A2 /* Frameworks */,
 				4FAC683F20053FBE001DD6A2 /* Resources */,
 				2316CDA7236F3F1E1AF2BB79 /* [CP] Embed Pods Frameworks */,
-				5F5CCA9B063569E0E1F0CD7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,21 +306,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BRIDGE/Pods-BRIDGE-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F5CCA9B063569E0E1F0CD7A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BRIDGE/Pods-BRIDGE-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CFF997021371ED6939DBD823 /* [CP] Check Pods Manifest.lock */ = {
