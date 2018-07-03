@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wZK-bu-9YV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wZK-bu-9YV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -849,13 +849,13 @@ Troubleshooting Tips:
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the text fields to change information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNB-dB-TBC">
-                                <rect key="frame" x="0.0" y="114" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szT-lB-dPb">
-                                <rect key="frame" x="88" y="165" width="200" height="30"/>
+                                <rect key="frame" x="88" y="164.5" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.016995774580000001" green="0.48766422269999998" blue="0.99898439650000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="G0a-o1-7Q1"/>
@@ -871,25 +871,25 @@ Troubleshooting Tips:
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6Q-tI-fSD">
-                                <rect key="frame" x="26" y="255" width="137" height="26"/>
+                                <rect key="frame" x="26" y="254.5" width="137" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovG-gG-yKX">
-                                <rect key="frame" x="54" y="306" width="81" height="26"/>
+                                <rect key="frame" x="54" y="305.5" width="81" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zz-tO-EVZ">
-                                <rect key="frame" x="60" y="482" width="69" height="26"/>
+                                <rect key="frame" x="60" y="481.5" width="69" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q2N-7y-AfR">
-                                <rect key="frame" x="188" y="255" width="150" height="30"/>
+                                <rect key="frame" x="188" y="254.5" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="UVv-iT-iRN"/>
                                     <constraint firstAttribute="height" constant="30" id="tZF-i7-jRu"/>
@@ -902,7 +902,7 @@ Troubleshooting Tips:
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address Line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOe-TH-zo2">
-                                <rect key="frame" x="188" y="305" width="150" height="30"/>
+                                <rect key="frame" x="188" y="304.5" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U9Q-Jh-9tg"/>
                                     <constraint firstAttribute="width" constant="150" id="XRg-W8-bwE"/>
@@ -912,7 +912,7 @@ Troubleshooting Tips:
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="street-address"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txr-Uv-TAq">
-                                <rect key="frame" x="188" y="345" width="150" height="30"/>
+                                <rect key="frame" x="188" y="344.5" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="21f-dh-s4e"/>
                                     <constraint firstAttribute="width" constant="150" id="7r8-XB-REx"/>
@@ -922,7 +922,7 @@ Troubleshooting Tips:
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level2"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State (CA)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ze-Im-obJ">
-                                <rect key="frame" x="188" y="385" width="150" height="30"/>
+                                <rect key="frame" x="188" y="384.5" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="EBm-96-awI"/>
                                     <constraint firstAttribute="height" constant="30" id="wM8-lQ-sJB"/>
@@ -932,7 +932,7 @@ Troubleshooting Tips:
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level1"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nba-Of-3vI">
-                                <rect key="frame" x="188" y="425" width="150" height="30"/>
+                                <rect key="frame" x="188" y="424.5" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2l4-lD-Er3"/>
                                     <constraint firstAttribute="width" constant="150" id="JJu-22-uPG"/>
@@ -942,7 +942,7 @@ Troubleshooting Tips:
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="postal-code"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valley Christian High School" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WAZ-75-SEm">
-                                <rect key="frame" x="188" y="480" width="150" height="30"/>
+                                <rect key="frame" x="188" y="479.5" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sPG-zs-jqs"/>
                                     <constraint firstAttribute="width" constant="150" id="ziU-DZ-4Ed"/>
@@ -2431,9 +2431,9 @@ Troubleshooting Tips:
         <image name="settings" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R48-rQ-zsl"/>
-        <segue reference="gWl-Ha-l92"/>
-        <segue reference="Wkx-Dt-zdG"/>
-        <segue reference="g1s-VU-qmF"/>
+        <segue reference="z8r-yN-vGo"/>
+        <segue reference="r3P-RG-plx"/>
+        <segue reference="hYh-vP-4Mi"/>
+        <segue reference="U3h-CG-hTa"/>
     </inferredMetricsTieBreakers>
 </document>
